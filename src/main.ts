@@ -21,5 +21,47 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 • СДВГ, беспокойное поведение и многое другое</p>
       </li>
     </ul>
+    <h2>Форма обратной связи</h2>
+    <form id="contact-form">
+      <label for="phone">Номер телефона:</label>
+      <input type="tel" id="phone" name="phone" required><br><br>
+      <label for="city">Город доставки:</label>
+      <input type="text" id="city" name="city" required><br><br>
+      <label for="equipment">Оборудование:</label>
+      <select id="equipment" name="equipment" required>
+        <option value="">Выберите оборудование</option>
+        <option value="Soundsory">Soundsory</option>
+      </select><br><br>
+      <label for="message">Дополнительная информация:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+      <button type="submit">Отправить</button>
+    </form>
   </div>
 `
+
+// Инициализация EmailJS
+declare var emailjs: any;
+
+emailjs.init('dU91bZJQ4hd1CPzEs');
+
+document.getElementById('contact-form')!.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const form = event.target as HTMLFormElement;
+  const formData = new FormData(form);
+
+  const templateParams = {
+    phone: formData.get('phone'),
+    city: formData.get('city'),
+    equipment: formData.get('equipment'),
+    message: formData.get('message')
+  };
+
+  emailjs.send('service_x2aa4ya', 'template_b5ar4yp', templateParams)
+    .then(function(response: any) {
+      alert('Сообщение отправлено успешно!');
+      form.reset();
+    }, function(error: any) {
+      alert('Ошибка при отправке: ' + JSON.stringify(error));
+    });
+});
