@@ -58,7 +58,7 @@ document.getElementById('contact-form')!.addEventListener('submit', function(eve
   };
 
   emailjs.send('service_x2aa4ya', 'template_b5ar4yp', templateParams)
-    .then(function(response: any) {
+    .then(function() {
       alert('Сообщение отправлено успешно!');
       form.reset();
     }, function(error: any) {
