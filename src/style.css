@@ -93,31 +93,96 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  form {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+  }
+  input, select, textarea {
+    background-color: #fff;
+    color: #213547;
+    border-color: #ccc;
+  }
 }
 
-form {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  text-align: left;
+@media (prefers-color-scheme: dark) {
+  form {
+    background-color: #333;
+    border-color: #555;
+  }
+  label {
+    color: #fff;
+  }
+  input, select, textarea {
+    background-color: #444;
+    color: #fff;
+    border-color: #555;
+  }
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #213547;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #213547;
+  }
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+@media (prefers-color-scheme: dark) {
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #333;
+    text-align: left;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #444;
+    color: #fff;
+  }
 }
 
 button {
