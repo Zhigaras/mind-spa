@@ -9,7 +9,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <li style="display: flex; gap: 20px; align-items: center;">
         <div style="display: flex; flex-direction: column; align-items: center;">
           <h3 style="margin: 0 0 10px 0;">Soundsory</h3>
-          <img src="src/sounsory.png" alt="Soundsory" style="max-width: 200px; height: auto;">
+          <img src="/sounsory.png" alt="Soundsory" style="max-width: 200px; height: auto;">
         </div>
         <p style="margin: 0; flex: 1; text-align: left;">Показания к применению SOUNDSORY®<br>
 <br>• Нарушения опорно-двигательного аппарата, равновесия и координации:<br>
